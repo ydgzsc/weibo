@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial - scale=1.0">
+    <title>Weibo - Like Interface</title>
+    <style>
+        body {
+            font - family: Arial, sans - serif;
+        }
+      .container {
+            display: flex;
+        }
+      .left - sidebar {
+            width: 200px;
+            background - color: #f5f5f5;
+            padding: 10px;
+        }
+      .main - content {
+            flex: 1;
+            padding: 10px;
+        }
+      .post {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin - bottom: 10px;
+        }
+      .post img {
+            max - width: 100%;
+        }
+      .user - info {
+            display: flex;
+            align - items: center;
+        }
+      .user - info img {
+            width: 40px;
+            height: 40px;
+            border - radius: 50 % ;
+            margin - right: 10px;
+        }
+      .trending - topics {
+            background - color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        #post - button {
+            background - color: #0084ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border - radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧边栏 -->
+        <div class="left - sidebar">
+            <div>首页</div>
+            <div>特别关注</div>
+            <div>高级搜索</div>
+            <div>自定义分组</div>
+            <div>名人堂</div>
+            <div>同事</div>
+            <div>同学</div>
+            <div>悄悄关注</div>
+        </div>
+        <!-- 主要内容区域 -->
+        <div class="main - content">
+            <!-- 微博发布区域 -->
+            <div>
+                <textarea id="weibo - content" placeholder="有什么新鲜事想分享给大家？"></textarea>
+                <button id="post - button">发布</button>
+            </div>
+            <!-- 微博动态 -->
+            <div class="post">
+                <div class="user - info">
+                    <img src="user - avatar.jpg" alt="User Avatar">
+                    <div>
+                        <span>郭帆FrantGwo</span>
+                        <span>10 - 30 23:19</span>
+                    </div>
+                </div>
+                <p>LA凌晨五点的健身房......</p>
+                <img src="post - image.jpg" alt="Post Image">
+            </div>
+            <div class="post">
+                <div class="user - info">
+                    <img src="user - avatar.jpg" alt="User Avatar">
+                    <div>
+                        <span>娱旅君</span>
+                        <span>3小时前</span>
+                    </div>
+                </div>
+                <p>#宋亚东双语版乌兰巴托的夜#宋亚东在现在就出发上的表现，真的非常棒。他的歌声里有故事，两种语言的演唱，就像讲述着不同的草原传说，太好听了。</p>
+            </div>
+            <!-- 微博热搜 -->
+            <div class="trending - topics">
+                <h3>微博热搜</h3>
+                <ol>
+                    <li>刘美含摇了陌生人做... 1239264</li>
+                    <li>周深把自己唱哭了... 16:00登顶</li>
+                    <li>Uzi怒喷On 312135</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 获取发布按钮和文本区域
+            var postButton = document.getElementById("post - button");
+            var weiboContent = document.getElementById("weibo - content");
+
+            // 给发布按钮添加点击事件监听器
+            postButton.addEventListener("click", function () {
+                var content = weiboContent.value;
+                if (content) {
+                    // 这里可以添加代码将内容发送到服务器或进行其他处理
+                    // 在此示例中，我们只是将内容打印到控制台
+                    console.log("发布的微博内容：" + content);
+                    // 清空文本区域
+                    weiboContent.value = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
